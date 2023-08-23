@@ -22,4 +22,4 @@ currentDirectory=$(dirname "$(readlink -f "$0")")
 
 tagName="nipio-local:latest"
 docker build -t "${tagName}" "${currentDirectory}"
-docker run --rm -p 10053:53/udp "${tagName}"
+docker run -d --rm -p 127.53.53.53:53:53/udp --name nipio "${tagName}"
